@@ -1,0 +1,12 @@
+#include "hpp\missionSpecific.hpp"
+#include "hpp\tourStandard.hpp"
+
+#include "scripts\TOUR_RC\dialog\hpp\config.hpp"
+#include "scripts\TOUR_IED\dlg\bombDefuseDlg.hpp"
+#include "scripts\TOUR_SI\interface\hpp\interface.hpp"
+#include "scripts\keyPad\hpp\keypad.hpp"
+
+#include "hpp\params.hpp"
+
+#include "hpp\cfgDebriefing.hpp"
+#include "hpp\cfgSounds.hpp"
