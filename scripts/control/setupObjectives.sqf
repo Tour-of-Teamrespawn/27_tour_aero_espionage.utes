@@ -139,6 +139,10 @@ if (TOUR_RC_EAST_DEAD) then
 			sleep 5;
 			["nofuel", false, true, false] remoteExecCall ["BIS_fnc_endMission"];
 		};
+		if (TOUR_pilotDied) exitWith
+		{
+			["pilotdead", false, true, false] remoteExecCall ["BIS_fnc_endMission"];
+		};
 		if ("TOUR_objrefuel" call BIS_fnc_taskState != "SUCCEEDED") exitWith
 		{
 			["TOUR_objPlane", "FAILED", true] call BIS_fnc_taskSetState;
@@ -150,10 +154,6 @@ if (TOUR_RC_EAST_DEAD) then
 			["TOUR_objPlane", "FAILED", true] call BIS_fnc_taskSetState;
 			sleep 5;
 			["destroyed", false, true, false] remoteExecCall ["BIS_fnc_endMission"];
-		};
-		if (TOUR_pilotDied) exitWith
-		{
-			["pilotdead", false, true, false] remoteExecCall ["BIS_fnc_endMission"];
 		};
 	};
 };

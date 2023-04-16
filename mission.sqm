@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=2809;
+		nextID=2810;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4134.1665,63.464863,2570.3743};
-		dir[]={0.5519796,-0.32216761,0.76914304};
-		up[]={0.18784799,0.94667453,0.26175049};
-		aside[]={0.81246305,-1.0395306e-006,-0.58306986};
+		pos[]={3040.5811,79.725342,3690.0667};
+		dir[]={-0.93892807,-0.26700005,-0.21736136};
+		up[]={-0.2601462,0.96369588,-0.060224496};
+		aside[]={-0.22554874,1.3382087e-006,0.97430789};
 	};
 };
 binarizationWanted=0;
-sourceName="26_tour_aero_espionage";
+sourceName="27_tour_aero_espionage";
 addons[]=
 {
 	"A3_Characters_F_Enoch",
@@ -780,7 +780,6 @@ class Mission
 						rank="LIEUTENANT";
 						init="this setgroupID [""Red Wolf Actual""];";
 						name="TOUR_player_1";
-						isPlayer=1;
 						isPlayable=1;
 						class Inventory
 						{
@@ -1401,7 +1400,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4198.9253,2.9939857,2660.1292};
+						position[]={4198.9248,2.9939253,2660.1292};
 					};
 					side="East";
 					flags=7;
@@ -1411,7 +1410,7 @@ class Mission
 						rank="SERGEANT";
 						init="this setgroupID [""Red Wolf One""];";
 						name="TOUR_player_3";
-						description="1: Team Leader@Red Wolf One";
+						description="1: Recon Team Leader@Red Wolf One";
 						isPlayable=1;
 						class Inventory
 						{
@@ -1607,7 +1606,6 @@ class Mission
 					};
 					id=6;
 					type="O_R_recon_TL_F";
-					atlOffset=-7.1525574e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2774,7 +2772,6 @@ class Mission
 			{
 			};
 			id=5;
-			atlOffset=-7.1525574e-007;
 		};
 		class Item2
 		{
@@ -2788,7 +2785,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4202.6553,3.2323737,2657.3582};
+						position[]={4202.6548,3.2323134,2657.3582};
 					};
 					side="East";
 					flags=7;
@@ -2798,7 +2795,7 @@ class Mission
 						rank="SERGEANT";
 						init="this setgroupID [""Red Wolf Two""];";
 						name="TOUR_player_9";
-						description="1: Team Leader@Red Wolf Two";
+						description="1: Recon Team Leader@Red Wolf Two";
 						isPlayable=1;
 						class Inventory
 						{
@@ -2994,7 +2991,6 @@ class Mission
 					};
 					id=23;
 					type="O_R_recon_TL_F";
-					atlOffset=-7.1525574e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4161,7 +4157,6 @@ class Mission
 			{
 			};
 			id=22;
-			atlOffset=-7.1525574e-007;
 		};
 		class Item3
 		{
@@ -4175,7 +4170,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4207.0913,3.5144904,2653.446};
+						position[]={4207.0908,3.5143874,2653.446};
 					};
 					side="East";
 					flags=7;
@@ -4185,7 +4180,7 @@ class Mission
 						rank="SERGEANT";
 						init="this setgroupID [""Red Wolf Three""];";
 						name="TOUR_player_15";
-						description="1: Team Leader@Red Wolf Three";
+						description="1: Recon Team Leader@Red Wolf Three";
 						isPlayable=1;
 						class Inventory
 						{
@@ -4381,7 +4376,6 @@ class Mission
 					};
 					id=30;
 					type="O_R_recon_TL_F";
-					atlOffset=-7.1525574e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5548,7 +5542,6 @@ class Mission
 			{
 			};
 			id=29;
-			atlOffset=-7.1525574e-007;
 		};
 		class Item4
 		{
@@ -5556,13 +5549,13 @@ class Mission
 			side="East";
 			class Entities
 			{
-				items=6;
+				items=7;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4212.3975,4.0093117,2650.2522};
+						position[]={4212.397,4.0092263,2650.252};
 					};
 					side="East";
 					flags=7;
@@ -5572,7 +5565,7 @@ class Mission
 						rank="SERGEANT";
 						init="this setgroupID [""Red Wolf Four""];";
 						name="TOUR_player_21";
-						description="1: Team Leader@Red Wolf Four";
+						description="1: Recon Team Leader@Red Wolf Four";
 						isPlayable=1;
 						class Inventory
 						{
@@ -6046,8 +6039,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4210.3281,3.3299842,2647.2041};
-						angles[]={6.183517,0.56672585,0.039979152};
+						position[]={4210.3281,3.3299849,2647.2041};
+						angles[]={6.1835093,0.56672585,0.039985489};
 					};
 					side="East";
 					flags=4;
@@ -6056,6 +6049,7 @@ class Mission
 						skill=1;
 						init="this setgroupID [""Red Wolf Four""];";
 						name="TOUR_player_23";
+						isPlayer=1;
 						isPlayable=1;
 						class Inventory
 						{
@@ -6234,7 +6228,6 @@ class Mission
 					};
 					id=39;
 					type="O_R_recon_exp_F";
-					atlOffset=-7.1525574e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -6929,6 +6922,19 @@ class Mission
 						};
 						nAttributes=3;
 					};
+				};
+				class Item6
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+038;
+					position[]={4129.0176,2.2133293,2698.7478};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=2809;
+					type="Move";
+					atlOffset=1.1444092e-005;
 				};
 			};
 			class Attributes
@@ -14325,34 +14331,33 @@ class Mission
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
-					position[]={4277.5171,31.553835,3240.8643};
+					position[]={4265.6704,32.586967,3245.7336};
 					class Effects
 					{
 					};
 					showWP="NEVER";
 					id=519;
 					type="Move";
-					atlOffset=1.9073486e-006;
+					atlOffset=3.8146973e-006;
 				};
 				class Item13
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
-					position[]={4294.5591,28.244919,3217.1836};
+					position[]={4290.4033,28.941532,3223.5059};
 					class Effects
 					{
 					};
 					showWP="NEVER";
 					id=520;
 					type="Move";
-					atlOffset=9.5367432e-006;
 				};
 				class Item14
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
-					position[]={4350.1162,27,3204.1541};
-					placement=70;
+					position[]={4344.4067,27,3193.1384};
+					placement=90;
 					class Effects
 					{
 					};
@@ -45058,11 +45063,11 @@ class Mission
 		class Item1745
 		{
 			dataType="Marker";
-			position[]={4237.459,27.754259,2681.9006};
+			position[]={3923.9304,9.161252,2749.2122};
 			name="TOUR_mkr_boat_13";
 			type="Empty";
 			id=2608;
-			atlOffset=8.8477154;
+			atlOffset=18.94342;
 		};
 		class Item1746
 		{

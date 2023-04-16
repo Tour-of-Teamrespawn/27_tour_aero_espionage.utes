@@ -91,6 +91,11 @@ while {true} do
 		};
 	};
 
+	if (TOUR_debug) then 
+	{
+		missionNameSpace setVariable ["TOUR_debug_AA", ({(damage _x < 0.7) && (alive gunner _x) }count _aaKeep)];
+	};
+
 	if ((count TOUR_AAGetInSpawns == 0) or ({damage _x < 0.7}count _aaKeep == 0) or (!isNil "TOUR_mission_ending")) exitWith {};
 	sleep 2;
 };

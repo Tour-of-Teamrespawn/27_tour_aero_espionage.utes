@@ -1,7 +1,7 @@
 TOUR_playerActions = 
 {
 
-	_actionswitch1 = 	["Cut Cable","Cut Cable","",
+	_actionswitch1 = 	["Switch Off","Switch Off","",
 					{
 						TOUR_switch_1 setVariable ["TOUR_switchedOff", true];
 						_order = missionNameSpace getVariable "TOUR_switchOrder";
@@ -94,7 +94,7 @@ TOUR_playerActions =
 		false
 	] call BIS_fnc_holdActionAdd;
 
-	_actionswitch3 = 	["Use Keypad","Use Keypad","",
+	_actionKEYPAD = 	["Use Keypad","Use Keypad","",
 					{
 						if (missionNameSpace getVariable "TOUR_KP_inuse" > 0) then
 						{
@@ -109,7 +109,24 @@ TOUR_playerActions =
 					}
 				] call ace_interact_menu_fnc_createAction;
 				
-	[TOUR_keypad_1, 0, ["ACE_MainActions"], _actionswitch3 ]spawn ace_interact_menu_fnc_addActionToObject;
+	[TOUR_keypad_1, 0, ["ACE_MainActions"], _actionKEYPAD ]spawn ace_interact_menu_fnc_addActionToObject;
+
+	_actionKEYPAD = 	["Use Keypad","Use Keypad","",
+					{
+						if (missionNameSpace getVariable "TOUR_KP_inuse" > 0) then
+						{
+							hint (["info", "Keypad In Use"] call TOUR_fnc_hint);
+						}else 
+						{
+							createDialog "TOUR_KP_dlg";
+						};
+					},
+					{
+						((nearestObject [getpos TOUR_keypad_2, "Land_Ss_hangar"]) getVariable "bis_disabled_Door_7") == 1
+					}
+				] call ace_interact_menu_fnc_createAction;
+				
+	[TOUR_keypad_2, 0, ["ACE_MainActions"], _actionKEYPAD ]spawn ace_interact_menu_fnc_addActionToObject;
 
 	_actionGear = 	["Change Loadout","Change Loadout","",
 					{

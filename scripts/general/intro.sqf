@@ -12,10 +12,9 @@ if (isServer) then
 				if (side _x == EAST) then 
 				{
 					_position = _x call TOUR_fnc_startPos;
-					sleep 1;
 					_x setposASL (TOUR_C130 modeltoworld _position);
-					[[_x], {sleep 1; (_this select 0) switchMove "stand"; sleep 1; doStop (_this select 0);(_this select 0) setDir (getDir TOUR_C130);}] remoteExec ["BIS_fnc_Spawn", 0, false];
-					sleep 5;
+					[[_x], {sleep 0.5; (_this select 0) switchMove "stand"; sleep 0.5; doStop (_this select 0);(_this select 0) setDir (getDir TOUR_C130);}] remoteExec ["BIS_fnc_Spawn", 0, false];
+					sleep 1.1;
 					[[], {{_x allowDamage true;}forEach (playableUnits + switchableUnits);}] remoteExec ["BIS_fnc_Spawn", 0, false];
 				};
 			}forEach (playableUnits + switchableUnits);
@@ -59,14 +58,14 @@ if (!isDedicated) then
 		"dynamicBlur" ppEffectEnable true;
 		"dynamicBlur" ppEffectAdjust [5];
 		"dynamicBlur" ppEffectCommit 0;
-		sleep 2;
+		sleep 3;
 		cutText [" ","BLACK IN", 5];
 		"dynamicBlur" ppEffectAdjust [0];
 		"dynamicBlur" ppEffectCommit 8;
 		5 fadeSound 1;
 		[]spawn 
 		{
-			sleep 8;
+			sleep 9;
 			_text = ["U","S"," ","A","i","r","b","a","s","e","\n","U","t","e","s"];
 			_display = "";
 			_pointer = 0;
@@ -89,7 +88,7 @@ if (!isDedicated) then
 			};
 		};
 		
-		sleep 15;
+		sleep 17;
 
 		"dynamicBlur" ppEffectAdjust [5];
 		"dynamicBlur" ppEffectCommit 2.5;
@@ -106,7 +105,7 @@ if (!isDedicated) then
 			_newPos = TOUR_C130 modelToWorld [0,20,-6];
 			_cam1 camSetPos _newPos;
 			_cam1 camCommit 0;
-			sleep 3;
+			sleep 4;
 			//face rear of plane
 			_newPos = TOUR_C130 modelToWorld [0,0,-3];
 			_cam1 camSetPos _newPos;
