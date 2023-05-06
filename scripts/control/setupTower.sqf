@@ -45,16 +45,16 @@ for "_i" from 1 to 3 do
 	_order = _order - [_num];
 };
 
-missionNameSpace setVariable ["TOUR_switchedOff", [], true];
+missionNameSpace setVariable ["TOUR_switchedOff", [[],0], true];
 missionNameSpace setVariable ["TOUR_switchOffOrder", TOUR_switchOffOrder, true];
 missionNamespace setVariable ["TOUR_switchTime", _timerDone, true];
 
-while {(count (missionNameSpace getVariable "TOUR_switchedOff") < 2) && (damage _tower < 0.7)} do 
+while {(count ((missionNameSpace getVariable "TOUR_switchedOff") select 0) < 3) && (damage _tower < 0.7)} do 
 {
-	_items = (missionNameSpace getVariable "TOUR_switchedOff");
+	_items = (missionNameSpace getVariable "TOUR_switchedOff") select 0;
 	if (count _items > 0) then 
 	{
-		_time = _x select 0;
+		_time = (missionNameSpace getVariable "TOUR_switchedOff") select 1; 
 		if (time > _time + (missionNameSpace getVariable "TOUR_switchTime")) then 
 		{
 			_timeOut = true;
@@ -64,12 +64,28 @@ while {(count (missionNameSpace getVariable "TOUR_switchedOff") < 2) && (damage 
 	sleep 1;
 };
 
-if ((TOUR_switchOffOrder isEqualTo (missionNameSpace getVariable "TOUR_switchedOff")) && !(_timeOut) && (damage _tower < 0.7)) then 
+if ((TOUR_switchOffOrder isEqualTo ((missionNameSpace getVariable "TOUR_switchedOff") select 0)) && !(_timeOut) && (damage _tower < 0.7)) then 
 {
-	["TOUR_objComms", "SUCCEEDED", false] call BIS_fnc_taskSetState;
+	sleep 2;
+	["TOUR_objComms", "SUCCEEDED", true] call BIS_fnc_taskSetState;
+	while {(damage _tower < 0.7)} do 
+	{
+		sleep 1;
+		if (damage _tower > 0.7) exitWith 
+		{
+			["TOUR_objComms", "FAILED", true] call BIS_fnc_taskSetState;
+			[600] execVM "scripts\control\carrierSupport.sqf";
+		};
+	};
 }else 
 {
-	["TOUR_objComms", "FAILED", false] call BIS_fnc_taskSetState;
-	[300] execVM "scripts\control\carrierSupport.sqf";
+	["TOUR_objComms", "FAILED", true] call BIS_fnc_taskSetState;
+	[600] execVM "scripts\control\carrierSupport.sqf";
 };
 
+if (damage _tower > 0.7) then 
+{
+	{
+		deleteVehicle _x;
+	}forEach [TOUR_switch_1, TOUR_switch_2, TOUR_switch_3];
+};

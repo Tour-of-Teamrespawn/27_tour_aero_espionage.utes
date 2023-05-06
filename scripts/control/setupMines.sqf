@@ -1,6 +1,6 @@
 _fields = [];
 _keepers = [];
-for "_i" from 1 to 19 do 
+for "_i" from 1 to 29 do 
 {
 	if ((str (getMarkerPos (format ["TOUR_mkr_mine_%1", _i]))) != "[0,0,0]") then 
 	{
@@ -9,7 +9,7 @@ for "_i" from 1 to 19 do
 };
 
 _airbaseFields = [];
-for "_i" from 20 to 29 do 
+for "_i" from 30 to 39 do 
 {
 	if ((str (getMarkerPos (format ["TOUR_mkr_mine_%1", _i]))) != "[0,0,0]") then 
 	{

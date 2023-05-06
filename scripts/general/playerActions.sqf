@@ -3,11 +3,13 @@ TOUR_playerActions =
 
 	_actionswitch1 = 	["Switch Off","Switch Off","",
 					{
-						TOUR_switch_1 setVariable ["TOUR_switchedOff", true];
-						_order = missionNameSpace getVariable "TOUR_switchOrder";
-						_order pushback 1;
-						missionNameSpace setVariable ["TOUR_switchOrder", [_order, time], true];
 						TOUR_switch_1 setVariable ["TOUR_switchedOff", true, true];
+						_order = (missionNameSpace getVariable "TOUR_switchedOff") select 0;
+						_order pushback 1;
+						missionNameSpace setVariable ["TOUR_switchedOff", [_order, time], true];
+						[[],{
+						TOUR_switch_1 say3d ["TOUR_clunk", 25];
+						}] remoteExecCall ["BIS_fnc_spawn", 0, false];
 					},
 					{
 						isNil {(TOUR_switch_1 getVariable "TOUR_switchedOff")}
@@ -18,11 +20,13 @@ TOUR_playerActions =
 
 	_actionswitch2 = 	["Switch Off","Switch Off","",
 					{
-						TOUR_switch_2 setVariable ["TOUR_switchedOff", true];
-						_order = missionNameSpace getVariable "TOUR_switchOrder";
-						_order pushback 2;
-						missionNameSpace setVariable ["TOUR_switchOrder", [_order, time], true];
 						TOUR_switch_2 setVariable ["TOUR_switchedOff", true, true];
+						_order = (missionNameSpace getVariable "TOUR_switchedOff") select 0;
+						_order pushback 2;
+						missionNameSpace setVariable ["TOUR_switchedOff", [_order, time], true];
+						[[],{
+						TOUR_switch_2 say3d ["TOUR_clunk", 25];
+						}] remoteExecCall ["BIS_fnc_spawn", 0, false];
 					},
 					{
 						isNil {(TOUR_switch_2 getVariable "TOUR_switchedOff")}
@@ -33,11 +37,13 @@ TOUR_playerActions =
 
 	_actionswitch3 = 	["Switch Off","Switch Off","",
 					{
-						TOUR_switch_3 setVariable ["TOUR_switchedOff", true];
-						_order = missionNameSpace getVariable "TOUR_switchOrder";
-						_order pushback 3;
-						missionNameSpace setVariable ["TOUR_switchOrder", [_order, time], true];
 						TOUR_switch_3 setVariable ["TOUR_switchedOff", true, true];
+						_order = (missionNameSpace getVariable "TOUR_switchedOff") select 0;
+						_order pushback 3;
+						missionNameSpace setVariable ["TOUR_switchedOff", [_order, time], true];
+						[[],{
+						TOUR_switch_3 say3d ["TOUR_clunk", 25];
+						}] remoteExecCall ["BIS_fnc_spawn", 0, false];
 					},
 					{
 						isNil {(TOUR_switch_3 getVariable "TOUR_switchedOff")}
@@ -50,7 +56,7 @@ TOUR_playerActions =
 		_actionCut = 	["Cut Cable","Cut Cable","",
 						{
 							_target setVariable ["TOUR_cut", true, true];
-							_target setPosATL [0,0,0];
+							[[_target], {_this select 0 setPosATL [0,0,0];}]remoteExecCall ["spawn", 2, false];
 						},
 						{
 							({!isNil {_x getVariable "TOUR_cut"}}count TOUR_cables == 0)

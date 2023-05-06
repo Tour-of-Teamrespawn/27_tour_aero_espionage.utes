@@ -15,11 +15,6 @@ if (TOUR_start == 0) then
 	player addBackpack "B_Parachute";
 };
 
-if (TOUR_start == 1) then 
-{
-	execVM "scripts\general\changeGear.sqf";
-};
-
 execVM "scripts\general\radioChannelSetup.sqf";
 
 waitUntil {!isNil "TOUR_introComplete"};

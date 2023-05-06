@@ -67,7 +67,7 @@ if (isNil "TOUR_gearChangeInit") then
 	};
 	if ((_startVehicle select 1) == "rear left") then 
 	{	
-		player moveInAny (_startVehicle select 0);
+		player moveInCargo (_startVehicle select 0);
 	};
 	_goggles = goggles player;
 	removegoggles player;

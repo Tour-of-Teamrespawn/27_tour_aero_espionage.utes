@@ -16,6 +16,13 @@ class CfgSounds
 		titles[] = {};
 	};
 
+ 	class TOUR_clunk
+	{
+		name = "TOUR_clunk";
+		sound[] = {"sounds\aero_clunk.ogg", 2, 1};
+		titles[] = {};
+	}; 
+
 	class TOUR_defector_0 
 	{
 		name = "TOUR_defector_0";

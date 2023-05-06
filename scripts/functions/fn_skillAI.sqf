@@ -77,7 +77,7 @@ if ((toLower (typeof _guy)) in _sf) then
 		{
 			if (vehicle _guy != _guy) then 
 			{
-				if !(vehicle _guy isKindOf "air") then 
+				if (!(vehicle _guy isKindOf "air")or !(vehicle _guy isKindOf "boat")) then 
 				{
 					if ((_guy != driver vehicle _guy) or (_guy != commander vehicle _guy)) then 
 					{

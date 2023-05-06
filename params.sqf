@@ -12,13 +12,13 @@ if (isMultiplayer) then
 	TOUR_Start = (paramsArray select 2); // 0=air, 1=sea, 2=land
 
 	//Parachute Opens at 200m ATL
-	TOUR_autoChute = (paramsArray select 3);
+	TOUR_autoChute = if ((paramsArray select 3) == 0) then {false}else{true};
 
 	// Disable / enable intro
-	TOUR_introEnable = (paramsArray select 4);
+	TOUR_introEnable = if ((paramsArray select 4) == 0) then {false}else{true};;
 
 	//Debug
-	TOUR_Debug = (paramsArray select 5);
+	TOUR_Debug = if ((paramsArray select 5) == 0) then {false}else{true};;
 
 }else
 {
@@ -28,13 +28,13 @@ if (isMultiplayer) then
 	//lives
 	TOUR_respawnTickets = [1,1,1,1];
 
-	TOUR_Start = 0;
+	TOUR_Start = 1;
 
-	TOUR_debug = true;
+	TOUR_debug = false;
 
 	TOUR_autoChute = false;
 
-	TOUR_introEnable = true;
+	TOUR_introEnable = false;
 };
 
 setViewDistance 3500;

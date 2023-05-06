@@ -8,7 +8,7 @@ TOUR_pilotDied = false;
 [EAST, "TOUR_objMeet", ["Meet with the defector and obtain the access codes for the hangers and other intel. The defector is located somewhere in <marker name=""TOUR_mkr_Meet"">this town</marker>.", "Meet Defector", "TOUR_mkr_meet"],  objNull, "CREATED", -1, false, "meet"] call BIS_fnc_taskCreate;
 [EAST, "TOUR_objComms", ["Disable the <marker name=""TOUR_mkr_objComms"">communications array</marker> to prevent distress calls.", "Disrupt Communications", "TOUR_mkr_objComms"],  objNull, "CREATED", -1, false, "upload"] call BIS_fnc_taskCreate;
 [EAST, "TOUR_objRadar", ["Disable the <marker name=""TOUR_mkr_Radar"">radar</marker> to ensure the plane cannot be tracked.", "Disable Radar", "TOUR_mkr_Radar"],  objNull, "CREATED", -1, false, "destroy"] call BIS_fnc_taskCreate;
-[EAST, "TOUR_objAA", ["Destroy 3 AA sites located across Utes.<br /><br /><marker name=""TOUR_mkr_AA_1"">Site 1</marker><br /><marker name=""TOUR_mkr_AA_2"">Site 2</marker><br /><marker name=""TOUR_mkr_AA_1"">Site 3</marker>", "Destroy AA", "TOUR_mkr_base"],  objNull, "CREATED", -1, false, "destroy"] call BIS_fnc_taskCreate;
+[EAST, "TOUR_objAA", ["Destroy 3 AA sites located across Utes.<br /><br /><marker name=""TOUR_mkr_AA_1"">Site 1</marker><br /><marker name=""TOUR_mkr_AA_2"">Site 2</marker><br /><marker name=""TOUR_mkr_AA_3"">Site 3</marker>", "Destroy AA", "TOUR_mkr_base"],  objNull, "CREATED", -1, false, "destroy"] call BIS_fnc_taskCreate;
 [EAST, "TOUR_objrefuel", ["Refuel the plane by stealing a fuel truck from <marker name=""TOUR_mkr_fuel"">the supply depot</marker>.", "Refuel", "Refuel"],  objNull, "CREATED", -1, false, "refuel"] call BIS_fnc_taskCreate;
 
 _a = execVM "scripts\control\setupAA.sqf";
@@ -55,6 +55,11 @@ while {!TOUR_RC_EAST_DEAD && !TOUR_pilotDied} do
 			["TOUR_objRadar", "SUCCEEDED", true] call BIS_fnc_tasksetState;
 			[{TOUR_radar animateSource ["Radar_Rotation",1, true];}]remoteExecCall ["spawn", 0, true];
 		};
+	};
+
+	If ((damage TOUR_plane > 0.7)or(fuel TOUR_plane > 0 && !(canMove TOUR_plane))) exitWith 
+	{
+
 	};
 
 	if (!isNil "TOUR_pilot") then 

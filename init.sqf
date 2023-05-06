@@ -1,5 +1,5 @@
 /* 
-###MISSION_VERSION 0.3-rc
+###MISSION_VERSION 0.6-beta
 */
 
 _d = execVM "scripts\general\debugRPT.sqf";
@@ -52,6 +52,21 @@ si =
 		]
 	]
 ] execVM "scripts\TOUR_SI\TOUR_SI_init.sqf";
+
+if (time < 30) then 
+{
+	[]spawn 
+	{
+		if (time < 30) then 
+		{
+			_lights = nearestObjects [getMarkerPos "TOUR_mkr_base", ["UK3CB_b_searchlight_NATO_P"], 2000];
+			waitUntil {{lightIsOn _x == "ON"}count _lights > 1};
+			sleep 1;
+			{_x switchLight "OFF"}forEach nearestObjects [getMarkerPos "TOUR_mkr_base", ["UK3CB_b_searchlight_NATO_P"], 2000];
+		};
+	};
+};
+
 
 TOUR_init_complete = true;
 

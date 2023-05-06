@@ -154,28 +154,28 @@ if (alive _defector) then
 {
 	_defector setRandomLip true; 
 	_defector say3D [format ["TOUR_defector_%1", (_code select 0)], _distance];
-	sleep 1.2;
+	sleep 1.5;
 };
 
 if (alive _defector) then 
 {
 	_defector setRandomLip true; 
 	_defector say3D [format ["TOUR_defector_%1", (_code select 1)], _distance];
-	sleep 1.2;
+	sleep 1.5;
 };
 
 if (alive _defector) then 
 {
 	_defector setRandomLip true; 
 	_defector say3D [format ["TOUR_defector_%1", (_code select 2)], _distance];
-	sleep 1.2;
+	sleep 1.5;
 };
 
 if (alive _defector) then 
 {
 	_defector setRandomLip true; 
 	_defector say3D [format ["TOUR_defector_%1", (_code select 3)], _distance];
-	sleep 1.2;
+	sleep 1.5;
 };
 
 _defector setRandomLip false; 
@@ -197,6 +197,8 @@ if (isServer) then
 		if (("TOUR_objMeet" call BIS_fnc_taskState) != "FAILED") then 
 		{
 			["TOUR_objMeet", "SUCCEEDED", true] call BIS_fnc_tasksetState;
+			sleep 3;
+			TOUR_scientistMove = true;
 		};
 	};
 };

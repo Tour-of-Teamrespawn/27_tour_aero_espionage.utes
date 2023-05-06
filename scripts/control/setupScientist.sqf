@@ -80,3 +80,25 @@ for "_i" from 1 to 4 do
 };
 
 missionNameSpace setVariable ["TOUR_accessCode", _code, true];
+
+_gp = group TOUR_scientist;
+
+_wp = _gp addWaypoint [[0,0,0], 0, 0];
+_wp setWaypointStatements ["!isNil 'TOUR_scientistMove' ", ""];
+_wp setWaypointPosition [getPosASL TOUR_scientist, 0];
+
+_wp4 = _gp addWaypoint [[0,0,0], 0, 0];
+_wp4 setWaypointStatements ["!isNil 'TOUR_scientistMove' ", ""];
+_wp4 setWaypointPosition [getPosASL TOUR_scientist, 0];
+
+_wp1 = _gp addWaypoint [getpos TOUR_fishingboat, count waypoints _gp];
+_wp1 setWaypointType "GETIN";
+_wp1 waypointAttachVehicle TOUR_fishingBoat;
+
+_wp2 = _gp addWaypoint [getpos TOUR_fishing, count waypoints _gp];
+_wp2 setWaypointCompletionRadius 20;
+_wp2 setwaypointType "GETOUT";
+
+_wp3 = _gp addWaypoint [getpos TOUR_fishing, count waypoints _gp];
+_wp3 setwaypointType "GETIN";
+_wp3 waypointAttachVehicle TOUR_fishing;

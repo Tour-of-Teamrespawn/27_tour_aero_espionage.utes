@@ -72,6 +72,8 @@ while {TOUR_airbaseCounts > 0} do
 						TOUR_siren_3 say3d ["TOUR_airraid", 500];
 						}] remoteExecCall ["BIS_fnc_spawn", 0, false];
 					TOUR_airbaseAlert = true;
+					sleep 5;
+					[] spawn {{[[_x], {(_this select 0) switchLight "ON"}]remoteExecCall ["SPAWN", 0, false]; sleep (0.25 + random 0.5);}forEach nearestObjects [getMarkerPos "TOUR_mkr_base", ["UK3CB_b_searchlight_NATO_P"], 2000];};
 				};
 				TOUR_airbaseCounts = TOUR_airbaseCounts - 1;
 				_pos = TOUR_AirbaseRequest select 0;
