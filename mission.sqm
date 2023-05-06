@@ -17,9 +17,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={4198.665,4.8002448,2667.6267};
-		dir[]={-0.86165851,-0.37960827,0.3368414};
-		up[]={-0.35355633,0.92514461,0.13821329};
-		aside[]={0.36409456,2.4586916e-007,0.93137276};
+		dir[]={-0.86164999,-0.37960458,0.33683801};
+		up[]={-0.35354987,0.92514879,0.13821046};
+		aside[]={0.36409059,-1.4901161e-008,0.93136358};
 	};
 };
 binarizationWanted=0;
@@ -721,7 +721,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category1
+	class Category0
 	{
 		name="Scenario";
 		class Attribute0
@@ -11915,7 +11915,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3720.5808,54.129036,3881.4568};
-				angles[]={-0,0,0.049958061};
+				angles[]={0,0,0.049958061};
 			};
 			side="Empty";
 			flags=4;
@@ -11931,7 +11931,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3728.356,54.517799,3888.6028};
-				angles[]={-0,0,0.049958061};
+				angles[]={0,0,0.049958061};
 			};
 			side="Empty";
 			flags=4;
@@ -11947,7 +11947,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3722.6838,54.307365,3899.5564};
-				angles[]={-0,0,0.039977662};
+				angles[]={0,0,0.039977662};
 			};
 			side="Empty";
 			flags=4;
@@ -50852,7 +50852,7 @@ class Mission
 			fillName="FDiagonal";
 			a=25;
 			b=50;
-			angle=110.92286;
+			angle=110.92284;
 			id=3006;
 			atlOffset=-0.00011825562;
 		};

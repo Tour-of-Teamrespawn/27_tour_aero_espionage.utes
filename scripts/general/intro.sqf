@@ -35,10 +35,12 @@ if (!isDedicated) then
 			player setposASL (TOUR_C130 modeltoworld _position);
 			player setDir (getDir TOUR_C130);
 			[[player], { (_this select 0) allowDamage false; sleep 1; (_this select 0) switchMove "stand"; sleep 1; doStop (_this select 0); (_this select 0) allowDamage true;}] remoteExec ["BIS_fnc_Spawn", 0, false];
-		}else 
-		{
-
 		};
+	};
+
+	if (TOUR_start == 1) then 
+	{
+		execVM "scripts\general\changeGear.sqf";
 	};
 
 	private ["_cam1"];

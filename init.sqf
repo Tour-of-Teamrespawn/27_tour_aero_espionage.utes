@@ -1,5 +1,5 @@
 /* 
-###MISSION_VERSION 0.6-beta
+###MISSION_VERSION 0.7-beta
 */
 
 _d = execVM "scripts\general\debugRPT.sqf";
@@ -23,6 +23,14 @@ waitUntil {scriptDone _f};
 TOUR_cables = [TOUR_powerCable_1, TOUR_powerCable_2, TOUR_powerCable_3, TOUR_powerCable_4, TOUR_powerCable_5];
 
 execVM "scripts\general\intro.sqf";
+
+if !(TOUR_debug) then 
+{
+	for "_i" from 1 to 50 do 
+	{
+		(format ["TOUR_mkr_mine_%1", _i]) setMarkerAlphaLocal 0;
+	};
+};
 
 _siAction = if (true) then
 {
