@@ -21,6 +21,7 @@ for "_i" from 1 to (ceil (count _fortifications) / 1.5) do
 	_unit setVariable ["lambs_danger_disableAI", true];
 	_unit setPos _pos;
 	_unit setDir (_x getRelDir _unit);
+	_unit setFormDir (_x getRelDir _unit);
 	_unit setUnitPos "UP";
 	[_unit, TOUR_EnemySFs, TOUR_EnemySnipers] call TOUR_fnc_skillAI;
 }forEach _towers;
@@ -39,7 +40,8 @@ for "_i" from 1 to (ceil (count _fortifications) / 1.5) do
 	_unit = _grp createUnit [(_types call BIS_fnc_selectRandom), _pos, [], 0, "NONE"]; 
 	_unit setVariable ["lambs_danger_disableAI", true];
 	_unit setPos _pos;
-	_unit setDir (_x getRelDir _unit);
+	_unit setDir getDir _x;
+	_unit setFormDir getDir _x;
 	_unit setUnitPos "UP";
 	[_unit, TOUR_EnemySFs, TOUR_EnemySnipers] call TOUR_fnc_skillAI;
 }forEach _towers;
@@ -58,7 +60,9 @@ for "_i" from 1 to (ceil (count _fortifications) / 1.5) do
 	_unit = _grp createUnit [(_types call BIS_fnc_selectRandom), _pos, [], 0, "NONE"]; 
 	_unit setVariable ["lambs_danger_disableAI", true];
 	_unit setPos _pos;
-	_unit setDir (_x getRelDir _unit);
+	_unit setDir getDir _x;
+	_unit setFormDir getDir _x;
+	_unit doWatch
 	_unit setUnitPos "UP";
 	[_unit, TOUR_EnemySFs, TOUR_EnemySnipers] call TOUR_fnc_skillAI;
 }forEach _towers;
@@ -77,7 +81,9 @@ for "_i" from 1 to (ceil (count _fortifications) / 2) do
 	_unit = _grp createUnit ["rhsusf_usmc_marpat_wd_sniper_m110", _pos, [], 0, "NONE"]; 
 	_unit setVariable ["lambs_danger_disableAI", true];
 	_unit setPos _pos;
-	_unit setDir (random 360);
+	_dir = (random 360);
+	_unit setDir _dir;
+	_unit setFormDir _dir;
 	_unit setUnitPos "UP";
 	[_unit, TOUR_EnemySFs, TOUR_EnemySnipers] call TOUR_fnc_skillAI;
 }forEach _towers;
@@ -99,6 +105,7 @@ for "_i" from 1 to (ceil (count _fortifications) / 2) do
 	_unit = _grp createUnit ["rhsusf_usmc_marpat_wd_machinegunner", _pos, [], 0, "NONE"]; 
 	_unit setVariable ["lambs_danger_disableAI", true];
 	_unit setDir ((getDir _x) + 180);
+	_unit setFormDir ((getDir _x) + 180);
 	_unit setUnitPos "middle";
 	_unit setPos _pos;
 	[_unit, TOUR_EnemySFs, TOUR_EnemySnipers] call TOUR_fnc_skillAI;

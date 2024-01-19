@@ -107,12 +107,15 @@ while {true} do
 					_pilots = _pilots - 1;
 					}forEach _spawns;
 					TOUR_circles = 0;
+					TOUR_heliChosen = _vehicle;
+					{_x disableAI "LIGHTS";}forEach units _grp;
 
 					_wp = _grp addWaypoint [getpos _vehicle, 0];
 					_wp waypointAttachVehicle _vehicle;
 					_wp setWaypointType "GETIN";
 					_wp setWaypointCombatMode "RED";
 					_wp setWaypointBehaviour "AWARE";
+					_wp setWaypointStatements ["true", "TOUR_heliChosen setPilotLight true; TOUR_heliChosen setCollisionLight true;"];
 
 					_wp2 = _grp addWaypoint [_pos getpos [150, 0], 0];
 					_wp2 setWaypointType "MOVE";

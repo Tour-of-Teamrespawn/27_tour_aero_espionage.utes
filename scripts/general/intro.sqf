@@ -8,6 +8,7 @@ if (isServer) then
 			sleep 1;
 			[[], {{_x allowDamage false;}forEach (playableUnits + switchableUnits);}] remoteExec ["BIS_fnc_Spawn", 0, false];
 			sleep 2;
+			/*
 			{
 				if (side _x == EAST) then 
 				{
@@ -18,6 +19,7 @@ if (isServer) then
 					[[], {{_x allowDamage true;}forEach (playableUnits + switchableUnits);}] remoteExec ["BIS_fnc_Spawn", 0, false];
 				};
 			}forEach (playableUnits + switchableUnits);
+			*/
 		};
 	};
 };
@@ -26,17 +28,6 @@ if (isServer) then
 if (!isDedicated) then 
 {
 	if (side player != EAST) exitWith {};
-
-	if (TOUR_Start == 0 && time > 1) then 
-	{	
-		if (TOUR_start == 0) then 
-		{
-			_position = player call TOUR_fnc_startPos;
-			player setposASL (TOUR_C130 modeltoworld _position);
-			player setDir (getDir TOUR_C130);
-			[[player], { (_this select 0) allowDamage false; sleep 1; (_this select 0) switchMove "stand"; sleep 1; doStop (_this select 0); (_this select 0) allowDamage true;}] remoteExec ["BIS_fnc_Spawn", 0, false];
-		};
-	};
 
 	if (TOUR_start == 1) then 
 	{
@@ -123,6 +114,17 @@ if (!isDedicated) then
 
 		};
 
+		if (TOUR_Start == 0 && time > 1) then 
+		{	
+			if (TOUR_start == 0) then 
+			{
+				_position = player call TOUR_fnc_startPos;
+				player setposASL (TOUR_C130 modeltoworld _position);
+				player setDir (getDir TOUR_C130);
+				[[player], { (_this select 0) allowDamage false; sleep 1; (_this select 0) switchMove "stand"; sleep 1; doStop (_this select 0); (_this select 0) allowDamage true;}] remoteExec ["BIS_fnc_Spawn", 0, false];
+			};
+		};
+
 		TOUR_C130 animate ["ramp_bottom",1];
 		TOUR_C130 animate ["ramp_top",1];
 
@@ -146,7 +148,7 @@ if (!isDedicated) then
 		TOUR_initroDone = true;
 		sleep 5;
 		waitUntil {!isNil "TOUR_initroDone"};
-		hint str ((player worldtomodel getposASL TOUR_c130) select 2);
+//		hint str ((player worldtomodel getposASL TOUR_c130) select 2);
 		waitUntil {(((player worldtomodel getposASL TOUR_c130) select 2) < 0)};
 		waitUntil {(((player worldtomodel getposASL TOUR_c130) select 2) > 0.3)};
 		player setDir 180;

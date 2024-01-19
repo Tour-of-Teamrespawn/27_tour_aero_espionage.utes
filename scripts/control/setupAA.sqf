@@ -2,6 +2,13 @@ private _aa = allMissionObjects "rhs_stinger_aa_pod_usmc_wd";
 
 private _aaKeep = [];
 
+for "_i" from 1 to 3 do 
+{
+	_stinger = selectRandom _aa;
+	_aaKeep pushback _stinger;
+	_aa = _aa - [_stinger];
+};
+
 {
 	_grp = createVehicleCrew _x;
 	waitUntil {count units _grp > 0};
@@ -53,6 +60,7 @@ while {true} do
 
 	if ({(damage _x < 0.7) && (alive gunner _x) }count _aaKeep == 0) then 
 	{
+		hint "!";
 		if ("TOUR_objAA" call BIS_fnc_TaskState != "SUCCEEDED") then 
 		{
 			["TOUR_objAA", "SUCCEEDED", true] call BIS_fnc_taskSetState;
@@ -73,7 +81,7 @@ while {true} do
 		missionNameSpace setVariable ["TOUR_debug_AA", ({(damage _x < 0.7) && (alive gunner _x) }count _aaKeep)];
 	};
 
-	if ((count TOUR_AAGetInSpawns == 0) or ({damage _x < 0.7}count _aaKeep == 0) or (!isNil "TOUR_mission_ending")) exitWith {};
+	if ((count TOUR_AAGetInSpawns == 0) or ({damage _x < 0.7}count _aaKeep == 0)) exitWith {};
 	sleep 2;
 };
 

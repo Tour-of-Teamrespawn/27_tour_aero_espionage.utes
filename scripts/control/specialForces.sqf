@@ -1,5 +1,10 @@
 TOUR_SF_Heli_1 doMove getPos TOUR_SF_land_1;
 
+{_x disableAI "LIGHTS";}forEach crew TOUR_SF_Heli_1;
+
+TOUR_SF_Heli_1 setPilotLight true;
+TOUR_SF_Heli_1 setCollisionLight true;
+
 _types = 
 [
 	"rhsusf_usmc_recon_marpat_wd_teamleader_lite",

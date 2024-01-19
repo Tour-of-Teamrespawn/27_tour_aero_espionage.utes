@@ -28,7 +28,7 @@ if (isMultiplayer) then
 	//lives
 	TOUR_respawnTickets = [1,1,1,1];
 
-	TOUR_Start = 1;
+	TOUR_Start = 2;
 
 	TOUR_debug = false;
 

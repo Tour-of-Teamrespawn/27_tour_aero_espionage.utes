@@ -19,6 +19,10 @@ for "_i" from 1 to 24 do
 	if (_current < 1) then {_current = 24};
 };
 
+{_x disableAI "LIGHTS";}forEach units (group driver TOUR_enemyBoat);
+TOUR_enemyBoat setPilotLight true; 
+TOUR_enemyBoat setCollisionLight true;
+
 {
 	_wp = (group driver TOUR_enemyBoat) addWaypoint [_x, 0];
 	_wp setWaypointType "MOVE";

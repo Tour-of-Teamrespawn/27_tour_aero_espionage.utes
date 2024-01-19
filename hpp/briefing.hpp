@@ -33,7 +33,7 @@ player createDiaryRecord
 		The more the stealthy approach to the mission, the less reinforcements and resistance you will encounter. The ultimate goal is to fuel up the plane and leave, but achieving all the objectives will give a far greater chance of success.
 		<br />
 		<br />
-		A notepad has been given for you to use. The defector will likely give you lots of information. Be sure to write it down!
+		A notepad has been given for you to use. Meeting the defector will give you invaluable information to help you succeed. Be sure to write it down!
 		<br />
 		<br />
 		The mission can be ended at any point by escaping to the fishing boat to the north. Once all the remaining team is there, the mission will end.
@@ -163,7 +163,7 @@ player createDiaryRecord
 		The US are close to completing a new stealth fighter prototype. We cannot let our enemy gain the up hand. We must steal the plane in order to learn its technology. The current prototype is being field tested from the island of <marker name=""TOUR_mkr_base"">Utes</marker>. Now that the plane is operational, we have a chance to fly it out of there.
 		 <br />
 		 <br />
-		As such your special forces unit has been tasked with stealing the plane. This may be a one way trip. Access codes to the hanger and further information can be gained from our source on the island who is defecting.
+		As such, your special forces unit has been tasked with stealing the plane. This may be a one way trip. Access codes to the hanger and further information can be gained from our source on the island who is defecting.
 		<br />
 		<br />
 		<font size='20' align='center' color='#0080ff'>Intel</font>
@@ -175,7 +175,7 @@ player createDiaryRecord
 		The islands parimeter is patrolled by boats. In addition to miltary vehicles and armoured personnel carriers, the island is swarming with USMC patrols. There are also reports of freshly laid mine fields dotted all across the island. Be sure to watch your step!
 		<br />
 		<br />
-		We are struggling to get in touch with our contact on the island. With increased surveillence, we believe he is running scared and has gone to ground. You will have to search for him in the <marker name=""TOUR_mkr_meet"">town</marker>. He is known only as The Black Spider.
+		We are struggling to get in touch with our contact on the island. With increased surveillence, we believe he is running scared and has gone to ground. You will have to search for him in the <marker name=""TOUR_mkr_meet"">town</marker>. The assets name is Professor Richard Johnson.
 		<br />
 		<br />
 		AA turrets are located across the island. Satellite imagery has given us the locations <marker name=""TOUR_mkr_AA_1"">here</marker>, <marker name=""TOUR_mkr_AA_2"">here</marker> and <marker name=""TOUR_mkr_AA_3"">here</marker>. Disabling these should make for a clean getaway. Avoid the <marker name=""TOUR_mkr_carrier"">USS Khe Sanh</marker> at all costs, she is outfitted with a full anti-air suite.

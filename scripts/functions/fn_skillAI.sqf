@@ -75,20 +75,20 @@ if ((toLower (typeof _guy)) in _sf) then
 			};
 		}else 
 		{
-			if (vehicle _guy != _guy) then 
+			if !((toLower (typeOf _guy)) in ["rhsusf_usmc_marpat_wd_helipilot", "rhsusf_usmc_marpat_wd_helicrew"]) then 
 			{
-				if (!(vehicle _guy isKindOf "air")or !(vehicle _guy isKindOf "boat")) then 
+				if ((vehicle _guy isKindOf "air") or (vehicle _guy isKindOf "ship")) then 
 				{
-					if ((_guy != driver vehicle _guy) or (_guy != commander vehicle _guy)) then 
+					if ((_guy != driver vehicle _guy) or (_guy != commander vehicle _guy) or (_guy != vehicle _guy)) then 
 					{
 						_guy unassignItem "rhsusf_anpvs_14";
 						_guy removeItem "rhsusf_anpvs_14";
 					};
+				}else 
+				{
+					_guy unassignItem "rhsusf_anpvs_14";
+					_guy removeItem "rhsusf_anpvs_14";
 				};
-			}else 
-			{
-				_guy unassignItem "rhsusf_anpvs_14";
-				_guy removeItem "rhsusf_anpvs_14";
 			};
 		};
 		_skillArray set [_forEachIndex, [(_x select 0), _value]];
